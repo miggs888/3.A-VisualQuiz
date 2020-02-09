@@ -4,7 +4,6 @@ let currentQuestion;
 let response;
 let responseColor = "#f29ed2";
 let heading; 
-let message;
 
 //quiz questions list
 const questionList = [
@@ -26,7 +25,7 @@ function next() {
     const randomIndex = Math.ceil(Math.random() * questionList.lenth - 1);
     return questionList[randomIndex];
 }
-currentQuestion = next();
+
 function checkQuestion() {
     if (currentQuestion.answer === questionInput.value()) {
         // remove correct asnwer from array
@@ -37,13 +36,15 @@ function checkQuestion() {
         response = 'correct!';
     } else {
         // this is the wrong ansert condition
-        response = 'Wubba lubba dub dub! that was not correct. Please try again';
+        response = 'Wubba lubba dub dub! That was not correct. Please try again';
         responseColor = 'red';
     }
     currentQuestion = next(); 
     questionInput.value('');
     messasge = currentQuestion.question;
 }
+currentQuestion = next();
+let messasge = currentQuestion.question;
 
 function setup() {
     createCanvas(800, 600);
