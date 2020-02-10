@@ -48,7 +48,7 @@ let message = currentQuestion.question;
 
 function setup() {
     createCanvas(800, 600);
-    background("#639986");
+    background("#77bcc0");
     // Quiz Title
     textFont("bely-display");
     heading = createElement('h1', ['The Even More Stylish Rick & Morty Quiz!'])
