@@ -22,14 +22,14 @@ function next() {
         alert('you won');
         return;
     }
-    const randomIndex = Math.ceil(Math.random() * questionList.lenth - 1);
+    const randomIndex = Math.ceil(Math.random() * questionList.length - 1);
     return questionList[randomIndex];
 }
 
 function checkQuestion() {
     if (currentQuestion.answer === questionInput.value()) {
         // remove correct asnwer from array
-        questionList = questionList.filer(questionListObj => {
+        questionList = questionList.filter(questionListObj => {
             return currentQuestion.answer !== questionListObj.answer;
         });
         // this is the correct condition
@@ -41,34 +41,35 @@ function checkQuestion() {
     }
     currentQuestion = next(); 
     questionInput.value('');
-    messasge = currentQuestion.question;
+    message = currentQuestion.question;
 }
 currentQuestion = next();
-let messasge = currentQuestion.question;
+let message = currentQuestion.question;
 
 function setup() {
     createCanvas(800, 600);
-    background("#21676c");
+    background("#639986");
     // Quiz Title
-    heading = createElement('h2', ['The Even More Stylish Rick & Morty Quiz!'])
-    heading.position(200, 75);
+    textFont("bely-display");
+    heading = createElement('h1', ['The Even More Stylish Rick & Morty Quiz!'])
+    heading.position(100, 75);
     // Input field
     questionInput = createInput('type answer here');
-    questionInput.position(100, 350);
+    questionInput.position(300, 350);
     questionInput.size(180, 30);
     // Submit Answer Button
     submitAnswerButton = createButton('Submit Answer');
-    submitAnswerButton.position(100, 400);
+    submitAnswerButton.position(300, 400);
     submitAnswerButton.size(180, 30);
     //mouse pressed
     submitAnswerButton.mousePressed(checkQuestion);
 
 }
 function draw() {
-    background("#21676c");
-    fill("#f29ed2");
-    textSize(32);
-    text(message, 50, 150);
+    background("#639986");
+    fill("#f7e54f");
+    textSize(20);
+    text(message, 40, 275);
     fill(responseColor); 
-    text(response, 50, 435);
+    text(response, 100, 435);
 }
