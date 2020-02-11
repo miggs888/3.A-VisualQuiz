@@ -61,6 +61,10 @@ function setup() {
     textFont("bely-display");
     heading = createElement('h2', ['The Even More Stylish Rick & Morty Quiz!'])
     heading.position(145, 75);
+    //instructions
+    textFont("bely-display");
+    heading = createElement('h5', ["*all answers should be lowercase"])
+    heading.position(450, 130);
     // Input field
     textFont("mr-eaves-xl-modern");
     answerInput = createInput('type answer here');
