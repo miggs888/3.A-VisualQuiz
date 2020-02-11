@@ -84,7 +84,7 @@ function draw() {
     //text
     noStroke();
     fill("#f7e54f");
-    textSize(25);
+    textSize(22);
     text(message, 120, 260);
     fill(responseColor); 
     text(response, 120, 480);
